@@ -77,8 +77,8 @@
 }
 
 .profile-no-pic {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background-color: #ffb800;
   margin-right: 0.6rem;
@@ -95,7 +95,7 @@
   font-weight: 0.875rem;
   font-family: "Work Sans";
   font-style: normal;
-  font-size: 0.86rem;
+  font-size: 0.6rem;
 }
 
 @media screen and (max-width: 426px) {
@@ -108,7 +108,7 @@
   }
 
   .user-details li:last-child {
-    font-size: 12px;
+    font-size: 9px;
   }
 
   .profile {
@@ -120,19 +120,22 @@
   .question {
     background-color: #fff4d7a6;
     margin-bottom: 20px;
-    /* width: 100%; */
     padding: 10px 40px;
   }
 
   .question h4 {
-    font-size: 18px;
+    font-size: 12px;
   }
 
   .question .question-div-text {
     margin: 0;
-    font-size: 14px;
+    font-size: 11px;
   }
   .question-list li {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
+  } 
+  
+  .question-list li {
+    margin-right: 8px;
   }
 }

@@ -6,6 +6,7 @@
   font-weight: normal;
   cursor: pointer;
   font-size: 0.875rem;
+  padding: 10px 20px;
 }
 
 .tab {
@@ -73,26 +74,31 @@
   }
 
   .filter {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    padding: 10px 10px;
   }
 }
 
 @media screen and (max-width: 426px) {
-  .tab-list ul li:last-child {
+  /* .tab-list ul li:last-child {
     display: none;
-  }
+  } */
   .tab {
     align-items: flex-end;
     justify-content: start;
   }
 
   .tab-list ul li {
-    padding: 0 12px;
+    padding: 0 8px;
   }
 
   .tab-first {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+    
+  .question-count {
+    font-size: 0.8rem;
   }
 }
