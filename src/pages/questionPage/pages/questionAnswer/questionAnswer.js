@@ -6,7 +6,7 @@ import { HiShare, HiOutlineDotsVertical } from "react-icons/hi";
 import "./questionAnswer.css";
 import { Button } from "../../../../components";
 import { TextArea } from "../../../../components/textArea/textArea";
-import { Ask } from "../../../../assets/svgs";
+import { Ask, Dropper, LetterA, Move, Write } from "../../../../assets/svgs";
 
 export const QuestionAnswer = ({ pic }) => {
   const tabItems = [
@@ -84,11 +84,26 @@ export const QuestionAnswer = ({ pic }) => {
         <Button buttonName="Add Comment" className="qa-btn" />
         <div className="breakline"></div>
       </div>
-      <div className="ans-section">
-        <h5>Add Answer</h5>
+      <div className="ask-question-textarea">
+        <label>Add Answer</label>
+        <ul className="textarea-cap">
+          <li>
+            <img src={Move} alt="move" />
+          </li>
+          <li>
+            <img src={Dropper} alt="eye dropper" />
+          </li>
+          <li>
+            <img src={Write} alt="write" />
+          </li>
+          <li>
+            <img src={LetterA} alt="edit question" />
+          </li>
+        </ul>
         <textarea
           rows="12"
-          className="qa-textarea"
+          className="textarea"
+          placeholder="Type in answer here..."
           aria-label="With textarea"
         ></textarea>
       </div>
@@ -97,7 +112,6 @@ export const QuestionAnswer = ({ pic }) => {
           buttonName="Post Answer"
           icon={Ask}
           className="question-page-btn"
-          //   btnAction={() => push("/")}
         />
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { Ask, She, She2 } from "../../assets/svgs";
+import { Ask, Banner, She, She2 } from "../../assets/svgs";
 import { Button } from "../../components/button/button";
 import { Question } from "../../components/Question/Question";
 import { Tab } from "../../components/Tab/Tab";
@@ -16,23 +16,17 @@ export const QuestionPage = () => {
 
   return (
     <div className="question-page">
-      <div className="question-page-header">
-        <div className="question-text">
-          <h1>Find the best answer to your devotional questions</h1>
-          <div className="question-page-btn-div">
-            <Button
-              buttonName="Ask Question"
-              icon={Ask}
-              className="question-page-btn"
-              btnAction={() => push("/ask_questions")}
-            />
-          </div>
+      <div className="page-banner">
+        <img src={Banner} alt="page banner" className="banner-img" />
+        <div className="question-page-btn-div">
+          <Button
+            buttonName="Ask Question"
+            icon={Ask}
+            imgClass="btn-icon"
+            className="question-page-btn"
+            onClick={() => push("/ask_questions")}
+          />
         </div>
-        {/* <picture>
-          <source sizes="(max-width: 1024px)" srcSet={She2} />
-          <source sizes="(max-width: 769px)" srcset={She} /> */}
-        <img src={She} alt="Question banner Icon" className="banner-image" />
-        {/* </picture> */}
       </div>
       <Tab
         className="tab-class"

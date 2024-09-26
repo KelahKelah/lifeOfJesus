@@ -1,53 +1,86 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { Dropper, LetterA, Move, Write } from "../../../../assets/svgs";
 import { Button } from "../../../../components";
+import { QuestionModal } from "../../../../components/questionModal/questionModal";
 import { TextArea } from "../../../../components/textArea/textArea";
 import { TextField } from "../../../../components/textField/textField";
 import "./askQuestion.css";
 
 export const AskQuestion = ({ pic }) => {
   const { push } = useHistory();
+  const [modalState, setModalState] = useState(false);
+
+  const handleSubmitQuestion = (e) => {
+    e.preventDefault();
+    setModalState(true);
+  };
+
+  const handleRedirection = (e) => {
+    e.preventDefault();
+    push("/question_answer");
+  };
+
   return (
     <div className="ask-question">
-      <h1>
-        Need more clarity on your favourite topics or post? Ask Questions
-        here.....
-      </h1>
       <form className="ask-question-form">
-        <h5>Personalize</h5>
+        <h5>Full Name</h5>
+        <p>Customize your account name</p>
         <div className="ask-question-input">
-          <TextField label="First Name" type="text" className="text-field" />
-          <TextField label="Last Name" type="text" />
+          <TextField
+            placeholder="First Name"
+            type="text"
+            className="text-field"
+          />
+          <TextField placeholder="Last Name" type="text" />
         </div>
+        <h5>Email Address</h5>
+        <p>Input your desired email address</p>
         <div className="ask-question-email">
-          <TextField label="Email Address" type="email" />
-        </div>
-        <div className="ask-question-img-div">
-          <h5>Change Profile Picture</h5>
-          <div className="ask-question-dp">
-            <div className="text-wrap">
-              <p>Choose a new avatar to be used across the word</p>
-            </div>
-            {pic ? (
-              <div className="profile-img">
-                <img src={pic} alt="user" />{" "}
-              </div>
-            ) : (
-              <div className="ask-question-img"></div>
-            )}
-          </div>
+          <TextField placeholder="Email Address" type="email" />
         </div>
         <div className="ask-question-textarea">
-          <label>Ask question</label>
-          <TextArea placeholder="Enter Question here..." />
+          <label>Type in Question here</label>
+          <p>Do you have a question? type your questions here...</p>
+          <ul className="textarea-cap">
+            <li>
+              <img src={Move} alt="move" />
+            </li>
+            <li>
+              <img src={Dropper} alt="eye dropper" />
+            </li>
+            <li>
+              <img src={Write} alt="write" />
+            </li>
+            <li>
+              <img src={LetterA} alt="edit question" />
+            </li>
+          </ul>
+          <textarea
+            rows="12"
+            className="textarea"
+            placeholder="Enter Question here..."
+            aria-label="With textarea"
+          ></textarea>
         </div>
         <Button
           type="submit"
           buttonName="Submit"
           className="ask-question-btn"
-          btnAction={() => push("/question_answer")}
+          onClick={(e) => handleSubmitQuestion(e)}
         />
       </form>
+
+      {modalState ? (
+        <QuestionModal
+          modalText="
+        Your question has been submitted sucessfully. The team would answer
+        your question in a bit, please hold on...."
+          btnAction={(e) => handleRedirection(e)}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 };

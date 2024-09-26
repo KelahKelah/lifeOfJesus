@@ -39,7 +39,7 @@ export const Question = ({
             )}{" "}
             <p className="user-name">{name}</p>
           </li>
-          <li>{time}</li>
+          <li className="time">{time}</li>
         </ul>
       </div>
     </div>

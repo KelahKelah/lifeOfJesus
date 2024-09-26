@@ -159,6 +159,12 @@
 }
 
 @media screen and (max-width: 426px) {
+    .qa-textarea {
+        background: rgba(235, 233, 233, 0.26) !important;
+        border: 1px solid #F8F8F8 !important;
+        width: 90%;
+    }
+
     .qa-header {
        font-size: 14px;
     }
@@ -199,5 +205,9 @@
     
     .question-page-btn {
         width: 100%;
+    }
+
+    .qa-reactions li {
+        margin-right: 0px;
     }
 }
